@@ -1,0 +1,5 @@
+<div id="titulo">Bienvenido Facturacion Prueba</div>
+<div>
+    <input type="text" value="" name="cedula" [(ngModel)]="cedula" (change)="validadorDeCedula(cedula)" maxlength="10">
+    <small *ngIf="!validador" class="text-danger">Cedula Invalida</small>
+</div>
