@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class IngresoComponent implements OnInit {
 
   validador: boolean=false;
-
+  cedula: String = '';
   constructor() { }
 
   validadorDeCedula(cedula: String) {
