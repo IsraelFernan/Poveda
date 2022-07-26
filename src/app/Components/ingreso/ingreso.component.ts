@@ -62,6 +62,20 @@ export class IngresoComponent implements OnInit {
       res = false;
       alert('La clave no cumple con las especificaciones.');
     }
+    this.ServiciosClientes.listarClientes().subscribe(res=>{
+      var vectorClientes = <any>res;
+      var i=0;
+      var j=0;
+      while(vectorClientes.length > i){
+        if(vectorClientes[i]['email']==this.email){
+          j++;
+        }
+        i++;
+      }
+      if(j==0){
+        alert('Usuario no encontrado.');
+      }
+    })
   }
 
   ngOnInit(): void {
