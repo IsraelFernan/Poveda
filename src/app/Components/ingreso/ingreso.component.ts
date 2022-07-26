@@ -9,6 +9,9 @@ export class IngresoComponent implements OnInit {
 
   validador: boolean=false;
   cedula: String = '';
+  mayusculas: any = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  minusculas: any = 'abcdefghijklmnopqrstuvwxyz';
+  caracteres: any  = '@#$%&';
   constructor() { }
 
   validadorDeCedula(cedula: String) {
