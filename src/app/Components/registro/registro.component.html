@@ -10,5 +10,5 @@
     <small *ngIf="!validador" class="text-danger" style="color: red;">Cedula Invalida</small>
     <h5 style="display: inline-block;">Clave:</h5>
     <input type="text" [(ngModel)]="clave"><br>
-    <button style="margin-left: 190px;" class="boton">REGISTRAR</button>
+    <button style="margin-left: 190px;" class="boton" (click)="validacionClave()">REGISTRAR</button>
 </div>

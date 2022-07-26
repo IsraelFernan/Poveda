@@ -7,47 +7,56 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
-  validador: boolean=false;
+  validador: boolean = false;
   cedula: String = '';
   mayusculas: any = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   minusculas: any = 'abcdefghijklmnopqrstuvwxyz';
-  caracteres: any  = '@#$%&';
+  caracteres: any = '@#$%&';
+  numeros: any='1234567890';
   nombre: string = '';
   apellido: string = '';
   clave: string = '';
   constructor() { }
 
-  validacionClave(){
-    var i =0;
-    while(this.clave.length > i){
-      var j=0;
-      var k=0;
-      var l=0;
-      var m=0;
-      var n=0;
-      var c=0;
-      while(this.mayusculas.length > j){
-        if(this.clave[i] == this.mayusculas[j]){
+  validacionClave() {
+    var i = 0;
+    var m = 0;
+    var n = 0;
+    var c = 0;
+    while (this.clave.length > i) {
+      var j = 0;
+      var k = 0;
+      var l = 0;
+      var o = 0;
+      while (this.mayusculas.length > j) {
+        if (this.clave[i] == this.mayusculas[j]) {
           m++;
         }
         j++;
       }
-      while(this.minusculas.length > k){
-        if(this.clave[i] == this.minusculas[k]){
+      while (this.minusculas.length > k) {
+        if (this.clave[i] == this.minusculas[k]) {
           n++;
         }
         k++;
       }
-      while(this.caracteres.length > l){
-        if(this.clave[i] == this.caracteres[l]){
+      while (this.caracteres.length > l) {
+        if (this.clave[i] == this.caracteres[l]) {
           c++;
         }
         l++;
       }
-      if(m <= 2 || n <= 2 || c <= 2){
-        alert('Por favor reingrese la clave.')
+      while (this.numeros.length > o) {
+        if (this.clave[i] == this.caracteres[l]) {
+          c++;
+        }
+        o++;
       }
+      
       i++;
+    }
+    if (m < 2 || n < 2 || c < 2) {
+      alert('La clave no cumple con las especificaciones.');
     }
   }
 
