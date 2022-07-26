@@ -18,11 +18,22 @@ export class RegistroComponent implements OnInit {
   clave: string = '';
   constructor() { }
 
+  registrarCliente(){
+    if(this.validador == false){
+      alert('Por favor revise la cédula esta mal ingresada.');
+    }
+    this.validacionClave();
+    if(this.nombre == '' || this.apellido == ''){
+      alert('Por favor Nombre y Apellido son requeridos');
+    }
+  }
+
   validacionClave() {
     var i = 0;
     var m = 0;
     var n = 0;
     var c = 0;
+    var numeros=0;
     while (this.clave.length > i) {
       var j = 0;
       var k = 0;
@@ -47,15 +58,15 @@ export class RegistroComponent implements OnInit {
         l++;
       }
       while (this.numeros.length > o) {
-        if (this.clave[i] == this.caracteres[l]) {
-          c++;
+        if (this.clave[i] == this.numeros[o]) {
+          numeros++;
         }
         o++;
       }
       
       i++;
     }
-    if (m < 2 || n < 2 || c < 2) {
+    if (m < 2 || n < 2 || c == 0 || numeros == 0) {
       alert('La clave no cumple con las especificaciones.');
     }
   }

@@ -7,8 +7,8 @@
     <input type="text"><br>
     <h5 style="display: inline-block;">Cédula:</h5>
     <input type="text" value="" placeholder="CEDULA" name="cedula" [(ngModel)]="cedula" (ngModelChange)="validadorDeCedula(cedula)" maxlength="10">
-    <small *ngIf="!validador" class="text-danger" style="color: red;">Cedula Invalida</small>
+    <small *ngIf="!validador" class="text-danger" style="color: red;">Cedula Invalida</small><br>
     <h5 style="display: inline-block;">Clave:</h5>
     <input type="text" [(ngModel)]="clave"><br>
-    <button style="margin-left: 190px;" class="boton" (click)="validacionClave()">REGISTRAR</button>
+    <button style="margin-left: 190px;" class="boton" (click)="registrarCliente()">REGISTRAR</button>
 </div>
