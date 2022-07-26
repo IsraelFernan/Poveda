@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ClienteServicioService } from 'src/app/Services/cliente-servicio.service';
 
 @Component({
   selector: 'app-registro',
