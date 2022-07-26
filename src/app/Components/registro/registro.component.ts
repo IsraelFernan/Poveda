@@ -12,6 +12,9 @@ export class RegistroComponent implements OnInit {
   mayusculas: any = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   minusculas: any = 'abcdefghijklmnopqrstuvwxyz';
   caracteres: any  = '@#$%&';
+  nombre: string = '';
+  apellido: string = '';
+  clave: string = '';
   constructor() { }
 
   validadorDeCedula(cedula: String) {
