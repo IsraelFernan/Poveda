@@ -19,13 +19,17 @@ export class RegistroComponent implements OnInit {
   constructor() { }
 
   registrarCliente(){
+    if(this.nombre == '' || this.apellido == ''){
+      res = false;
+      alert('Por favor Nombre y Apellido son requeridos');
+    }
+    var res = true;
     if(this.validador == false){
+      res = false;
       alert('Por favor revise la cédula esta mal ingresada.');
     }
     this.validacionClave();
-    if(this.nombre == '' || this.apellido == ''){
-      alert('Por favor Nombre y Apellido son requeridos');
-    }
+    console.log(res);
   }
 
   validacionClave() {
