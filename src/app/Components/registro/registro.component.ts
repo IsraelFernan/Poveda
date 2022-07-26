@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClienteServicioService } from 'src/app/Services/cliente-servicio.service';
 
 @Component({
   selector: 'app-registro',
@@ -9,6 +10,7 @@ export class RegistroComponent implements OnInit {
 
   validador: boolean = false;
   cedula: String = '';
+  email: String = '';
   mayusculas: any = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   minusculas: any = 'abcdefghijklmnopqrstuvwxyz';
   caracteres: any = '@#$%&';
@@ -16,28 +18,24 @@ export class RegistroComponent implements OnInit {
   nombre: string = '';
   apellido: string = '';
   clave: string = '';
+
   constructor() { }
 
-  registrarCliente(){
-    if(this.nombre == '' || this.apellido == ''){
-      res = false;
-      alert('Por favor Nombre y Apellido son requeridos');
-    }
-    var res = true;
-    if(this.validador == false){
-      res = false;
-      alert('Por favor revise la cédula esta mal ingresada.');
-    }
-    this.validacionClave();
-    console.log(res);
-  }
-
-  validacionClave() {
+  registrarCliente() {
     var i = 0;
     var m = 0;
     var n = 0;
     var c = 0;
     var numeros=0;
+    var res = true;
+    if(this.nombre == '' || this.apellido == ''){
+      res = false;
+      alert('Por favor Nombre y Apellido son requeridos');
+    }
+    if(this.validador == false){
+      res = false;
+      alert('Por favor revise la cédula esta mal ingresada.');
+    }
     while (this.clave.length > i) {
       var j = 0;
       var k = 0;
@@ -71,6 +69,7 @@ export class RegistroComponent implements OnInit {
       i++;
     }
     if (m < 2 || n < 2 || c == 0 || numeros == 0) {
+      res = false;
       alert('La clave no cumple con las especificaciones.');
     }
   }

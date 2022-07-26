@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IngresoComponent implements OnInit {
 
+  email: string = '';
+  clave: string='';
   
   constructor() { }
 

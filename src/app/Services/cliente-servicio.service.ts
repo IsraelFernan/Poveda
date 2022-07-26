@@ -9,8 +9,12 @@ import { Observable } from 'rxjs';
 export class ClienteServicioService {
 
   url: string = 'http://localhost:61154/api/Clientes';
+  
   constructor(private http: HttpClient) { }
   agregarCliente(datos:Cliente):Observable<Cliente>{
     return this.http.post<Cliente>(this.url,datos);
+  }
+  listarClientes(){
+    return this.http.get(this.url);
   }
 }
