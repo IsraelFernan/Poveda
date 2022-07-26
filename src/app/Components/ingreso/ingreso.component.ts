@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClienteService } from 'src/app/Services/cliente.service';
+import { Cliente } from 'src/app/Models/Cliente';
 
 @Component({
   selector: 'app-ingreso',
@@ -14,7 +16,7 @@ export class IngresoComponent implements OnInit {
   caracteres: any = '@#$%&';
   numeros: any='1234567890';
   
-  constructor() { 
+  constructor(private ServiciosClientes: ClienteService) { 
   }
 
   validarClave() {
